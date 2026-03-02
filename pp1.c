@@ -408,7 +408,7 @@ pp1 (mpz_t f, mpz_t p, mpz_t n, mpz_t go, double *B1done, double B1,
 
   if (test_verbose (OUTPUT_VERBOSE))
     {
-      if (mpz_sgn (B2min_parm) >= 0)
+      if (mpz_sgn (B2min_parm) >= 0 && mpz_cmp_d (B2min_parm, B1) != 0)
         {
           outputf (OUTPUT_VERBOSE, 
             "Can't compute success probabilities for B1 <> B2min\n");
