@@ -30,7 +30,17 @@ SOFTWARE.
 #include <time.h>
 #include <math.h>
 #include <string.h>
+#ifdef HAVE_ENDIAN_H
 #include <endian.h>
+#elif defined (__MINGW32__)
+#include <sys/param.h>
+#if BYTE_ORDER == LITTLE_ENDIAN
+#define htole32(x) (x)
+#define le32toh(x) (x)
+#define htole64(x) (x)
+#define le64toh(x) (x)
+#endif
+#endif  /* HAVE_ENDIAN_H */
 #include <inttypes.h>
 #ifdef HAVE_MMAP
 #include <sys/mman.h>
