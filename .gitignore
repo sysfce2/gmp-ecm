@@ -15,6 +15,7 @@ rho
 test-driver
 tune
 nodist/countsmooth
+*.exe
 
 # Automake file
 aclocal.m4
@@ -26,9 +27,10 @@ ecm.h
 stamp-h1
 stamp-h2
 
-# Test longs
+# Test logs
 test.*.log
 test.*.trs
+*.txt
 
 # Misc
 autom4te.cache/
@@ -53,6 +55,7 @@ Makefile
 aclocal.m4
 compile
 configure
+configure~
 depcomp
 ecm.h
 install-sh
