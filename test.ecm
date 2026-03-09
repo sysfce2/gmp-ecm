@@ -333,7 +333,7 @@ $ECM -bloads $TEST 10900 < ${GMPECM_DATADIR}/c155; checkcode $? 1
 $ECM -bsaves test.s -param 0 11e3 < ${GMPECM_DATADIR}/c155; checkcode $? 1
 # exercise "Error, -bloads makes sense in batch mode only" error message
 if [ $GMP_NUMB_BITS -eq 64 ]; then
-  $ECM -bsaves test.s -param 1 11e3 < ${GMPECM_DATADIR}/c155
+  $ECM -bloads test.s -param 1 11e3 < ${GMPECM_DATADIR}/c155; checkcode $? 1
 fi
 $ECM -bloads test.s -param 0 11e3 < ${GMPECM_DATADIR}/c155; checkcode $? 1
 /bin/rm -f test.s
